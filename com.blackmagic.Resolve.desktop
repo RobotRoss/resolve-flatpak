@@ -4,3 +4,8 @@ Name=Davinci Resolve
 Icon=com.blackmagic.Resolve
 Exec=/app/bin/resolve.sh
 PrefersNonDefaultGPU=true
+Actions=GetLogs;
+
+[Desktop Action GetLogs]
+Exec=/app/scripts/script.getlogs.v4
+Name=Collect logs
