@@ -1,6 +1,7 @@
 import sys
 
 from resolve_download import *
+from build_metainfo import *
 
 if __name__ == "__main__":
     is_studio = '--studio' in sys.argv
@@ -18,8 +19,8 @@ if __name__ == "__main__":
     print(f"Download latest version of Davinci Resolve{' Studio' if is_studio else ''}...")
     download_using_id(download_id)
     print(f"Building meta info...")
-    # build_metainfo(
-    #     app_id='com.blackmagic.ResolveStudio' if is_studio else 'com.blackmagic.Resolve',
-    #     app_description="DaVinci Resolve Studio" if is_studio else 'DaVinci Resolve',
-    #     app_tag=app_tag,
-    # )
+    build_metainfo(
+        app_id='com.blackmagicdesign.Resolve.Studio' if is_studio else 'com.blackmagicdesign.Resolve.Free',
+        app_description="DaVinci Resolve Studio" if is_studio else 'DaVinci Resolve',
+        app_tag=app_tag,
+    )
