@@ -29,7 +29,7 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
             build=linux["releaseId"],
             beta=-1 if beta is None or beta.group(1) == "" else beta.group(1)
         )
-        date = datetime.datetime.strptime(download["date"], '%d %b %Y').strftime("%Y-%m%d")
+        date = datetime.datetime.strptime(download["date"], '%d %b %Y').strftime("%Y-%m-%d")
 
         if idx == 0 or latest_description == "":
             latest_description = description
@@ -42,8 +42,7 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
 
         releases += release
 
-    template = """
-<?xml version="1.0" encoding="UTF-8"?>
+    template = """<?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 First Lastname <your@email.com> -->
 <component type="desktop-application">
   <id>""" + app_id + """</id>
@@ -51,6 +50,7 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
   <project_license>LicenseRef-proprietary</project_license>
   <name>""" + app_description + """</name>
   <summary>Professional Editing, Color, Effects and Audio Post!</summary>
+  <content_rating type="oars-1.1"/>
 
   <description>
     <p>
@@ -63,23 +63,23 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
   <screenshots>
     <screenshot type="default">
       <caption>DaVinci Resolve 18 Cut Page</caption>
-      <image>https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/cut.jpg</image>
+      <image type="source" width="1963" height="1087">https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/cut.jpg</image>
     </screenshot>
     <screenshot>
       <caption>DaVinci Resolve 18 Edit Page</caption>
-      <image>https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/edit.jpg</image>
+      <image type="source" width="1963" height="1087">https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/edit.jpg</image>
     </screenshot>
     <screenshot>
       <caption>DaVinci Resolve 18 Color Page</caption>
-      <image>https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/color.jpg</image>
+      <image type="source" width="1963" height="1087">https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/color.jpg</image>
     </screenshot>
     <screenshot>
       <caption>DaVinci Resolve 18 Fusion Page</caption>
-      <image>https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/fusion.jpg</image>
+      <image type="source" width="1963" height="1087">https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/fusion.jpg</image>
     </screenshot>
     <screenshot>
       <caption>DaVinci Resolve 18 Fairlight Page</caption>
-      <image>https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/fairlight.jpg</image>
+      <image type="source" width="1963" height="1087">https://images.blackmagicdesign.com/images/products/davinciresolve/overview/onesolution/carousel/fairlight.jpg</image>
     </screenshot>
   </screenshots>
 
