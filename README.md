@@ -13,7 +13,7 @@ Usage
 -----
 
 1. Clone this repo with: `git clone -b unified-patches https://github.com/RobotRoss/resolve-flatpak.git --recursive`
-By default, com.blackmagic.Resolve.yaml is configured to package the latest version of Resolve (18.5 Beta 3 at the time of writing).
+By default, com.blackmagic.Resolve.Free.yaml is configured to package the latest version of Resolve (18.5 Beta 3 at the time of writing).
 
 2. Build your package, and export to a distributable single file installer:
 
