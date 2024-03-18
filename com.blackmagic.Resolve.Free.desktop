@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Davinci Resolve
-Icon=com.blackmagic.Resolve
+Icon=com.blackmagic.Resolve.Free
 Exec=/app/bin/resolve.sh
 PrefersNonDefaultGPU=true
 Actions=GetLogs;PanelSetup;RAWPlayer;RAWSpeedTest;
