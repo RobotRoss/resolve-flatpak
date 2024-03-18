@@ -3,6 +3,7 @@ Type=Application
 Name=Davinci Resolve Studio
 Icon=com.blackmagic.Resolve.Studio
 Exec=/app/bin/resolve.sh
+Categories=AudioVideo;
 PrefersNonDefaultGPU=true
 Actions=GetLogs;PanelSetup;RAWPlayer;RAWSpeedTest;
 
