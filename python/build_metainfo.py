@@ -51,6 +51,7 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
   <name>""" + app_description + """</name>
   <summary>Professional Editing, Color, Effects and Audio Post!</summary>
   <content_rating type="oars-1.1"/>
+  <developer_name>Blackmagic Design</developer_name>
 
   <description>
     <p>
