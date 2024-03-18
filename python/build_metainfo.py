@@ -37,7 +37,9 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
         release = """
   <release version=\"""" + str(version) + """\" date=\"""" + date + """\">
     <description>
-      """ + description + """
+      <p>
+        """ + description + """
+      </p>
     </description>
   </release>"""
 
