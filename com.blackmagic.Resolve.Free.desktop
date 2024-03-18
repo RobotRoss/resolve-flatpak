@@ -3,6 +3,7 @@ Type=Application
 Name=Davinci Resolve
 Icon=com.blackmagic.Resolve.Free
 Exec=/app/bin/resolve.sh
+Categories=AudioVideo;
 PrefersNonDefaultGPU=true
 Actions=GetLogs;PanelSetup;RAWPlayer;RAWSpeedTest;
 
