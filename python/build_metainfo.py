@@ -34,11 +34,12 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
         if idx == 0 or latest_description == "":
             latest_description = description
 
-        release = """<release version=\"""" + str(version) + """\" date=\"""" + date + """\">
-              <description>
-                 """ + description + """
-              </description>
-            </release>"""
+        release = """
+  <release version=\"""" + str(version) + """\" date=\"""" + date + """\">
+    <description>
+      """ + description + """
+    </description>
+  </release>"""
 
         releases += release
 
@@ -91,8 +92,7 @@ def build_metainfo(app_id: str, app_description: str, app_tag: str):
     <binary>resolve</binary>
   </provides>
 
-  <releases>    
-    """ + releases + """
+  <releases>""" + releases + """
   </releases>
 </component>
 """
