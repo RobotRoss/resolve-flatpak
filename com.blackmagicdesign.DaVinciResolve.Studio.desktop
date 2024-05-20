@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
-Name=Davinci Resolve
-Icon=com.blackmagicdesign.Resolve.Free
+Name=DaVinci Resolve Studio
+Icon=com.blackmagicdesign.DaVinciResolve.Studio
 Exec=/app/bin/resolve.sh
 Categories=AudioVideo;
 PrefersNonDefaultGPU=true

@@ -2,7 +2,7 @@
 # Flatpak Configuration for building DaVinci Resolve
 #
 ####
-app-id: com.blackmagicdesign.Resolve.Studio
+app-id: com.blackmagicdesign.DaVinciResolve.Free
 runtime: org.freedesktop.Platform
 runtime-version: &runtime-version '23.08'
 sdk: org.freedesktop.Sdk
@@ -12,13 +12,13 @@ finish-args:
   - --socket=pulseaudio
   - --socket=x11
   - --socket=wayland
-  - --device=all
+  - --device=dri
   - --filesystem=xdg-documents
   - --filesystem=xdg-cache
   - --filesystem=xdg-data
   - --filesystem=xdg-videos
+  - --filesystem=xdg-desktop
   - --filesystem=~/.local/share/DaVinciResolve
-  - --filesystem=~/Desktop
   - --env=LD_PRELOAD=/lib/x86_64-linux-gnu/libglib-2.0.so.0 /lib/x86_64-linux-gnu/libgio-2.0.so.0 /lib/x86_64-linux-gnu/libgmodule-2.0.so.0 /lib/x86_64-linux-gnu/libgobject-2.0.so.0
   - --env=RUSTICL_ENABLE=radeonsi,iris,nouveau
   - --env=OCL_ICD_VENDORS=rusticl.icd
@@ -67,9 +67,9 @@ modules:
         - --share=network
     build-commands:
       - install -Dm644 logo.png /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.png
-      - install -Dm644 com.blackmagicdesign.Resolve.Studio.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 com.blackmagicdesign.DaVinciResolve.Free.desktop /app/share/applications/${FLATPAK_ID}.desktop
       - |
-        ./run_complete_installation.sh --studio
+        ./run_complete_installation.sh
     sources:
       - type: file
         path: python/build_metainfo.py
@@ -92,4 +92,4 @@ modules:
       - type: file
         path: logo.png
       - type: file
-        path: com.blackmagicdesign.Resolve.Studio.desktop
+        path: com.blackmagicdesign.DaVinciResolve.Free.desktop
