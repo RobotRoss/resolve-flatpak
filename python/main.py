@@ -20,7 +20,7 @@ if __name__ == "__main__":
     download_using_id(download_id)
     print(f"Building meta info...")
     build_metainfo(
-        app_id='com.blackmagicdesign.Resolve.Studio' if is_studio else 'com.blackmagicdesign.Resolve.Free',
+        app_id='com.blackmagicdesign.DaVinciResolve.Studio' if is_studio else 'com.blackmagicdesign.DaVinciResolve.Free',
         app_description="DaVinci Resolve Studio" if is_studio else 'DaVinci Resolve',
         app_tag=app_tag,
     )
