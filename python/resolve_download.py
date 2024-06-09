@@ -26,7 +26,7 @@ headers = {
 }
 
 
-def get_latest_version_information(app_tag: str, refer_id: str = '77ef91f67a9e411bbbe299e595b4cfcc', stable=True):
+def get_latest_version_information(app_tag: str, refer_id: str = 'dfd43085ef224766b06b579ce8a6d097', stable=True):
     response: requests.Response = requests.get(
         f"https://www.blackmagicdesign.com/api/support/latest-stable-version/{app_tag}/linux"
         if stable else
@@ -49,7 +49,7 @@ def get_latest_version_information(app_tag: str, refer_id: str = '77ef91f67a9e41
     ), parsed_response["linux"]["releaseId"], parsed_response["linux"]["downloadId"])
 
 
-def download_using_id(download_id: str, refer_id: str = "77ef91f67a9e411bbbe299e595b4cfcc"):
+def download_using_id(download_id: str, refer_id: str = "dfd43085ef224766b06b579ce8a6d097"):
     download_url_data = {
         "firstname": "Flatpak",
         "lastname": "Builder",
