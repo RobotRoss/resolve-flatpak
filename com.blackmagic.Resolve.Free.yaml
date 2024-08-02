@@ -1,0 +1,57 @@
+####
+# Flatpak Configuration for building DaVinci Resolve
+#
+####
+app-id: com.blackmagic.Resolve
+runtime: org.freedesktop.Platform
+runtime-version: &runtime-version '23.08'
+sdk: org.freedesktop.Sdk
+finish-args:
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-cache
+  - --filesystem=xdg-data
+  - --filesystem=xdg-videos
+  - --filesystem=~/.local/share/DaVinciResolve
+
+command: /app/bin/resolve.sh
+modules:
+  - shared-modules/glu/glu-9.json
+  - name: resolve
+    buildsystem: simple
+    build-options:
+      build-args:
+        - --share=network
+    build-commands:
+      - install -Dm644 logo.png /app/share/icons/hicolor/scalable/apps/com.blackmagic.Resolve.png
+      - install -Dm644 com.blackmagic.Resolve.Free.desktop /app/share/applications/com.blackmagic.Resolve.Free.desktop
+      - |
+        ./run_complete_installation.sh
+    sources:
+      - type: file
+        path: python/build_metainfo.py
+      - type: file
+        path: python/main.py
+      - type: file
+        path: python/resolve_download.py
+      - type: file
+        path: python/version.py
+      - type: file
+        path: shell/setup_resolve.sh
+      - type: file
+        path: shell/setup_directories.sh
+      - type: file
+        path: shell/resolve.sh
+      - type: file
+        path: run_complete_installation.sh
+      - type: file
+        path: requirements.txt
+      - type: file
+        path: logo.png
+      - type: file
+        path: com.blackmagic.Resolve.Free.desktop
